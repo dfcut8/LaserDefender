@@ -2144,7 +2144,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 6.06
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2169,7 +2169,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -4.63, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3713,23 +3713,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7558327515128055777, guid: 0ebe23983242eca4c90c37428dd78b33, type: 3}
       propertyPath: speed
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -7558327515128055777, guid: 0ebe23983242eca4c90c37428dd78b33, type: 3}
       propertyPath: paddingTop
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -7558327515128055777, guid: 0ebe23983242eca4c90c37428dd78b33, type: 3}
       propertyPath: paddingLeft
-      value: 0.1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: -7558327515128055777, guid: 0ebe23983242eca4c90c37428dd78b33, type: 3}
       propertyPath: paddingRight
-      value: 0.1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: -7558327515128055777, guid: 0ebe23983242eca4c90c37428dd78b33, type: 3}
       propertyPath: paddingBottom
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6035701904067242697, guid: 0ebe23983242eca4c90c37428dd78b33, type: 3}
       propertyPath: m_Name
@@ -3737,7 +3737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7729186268947163834, guid: 0ebe23983242eca4c90c37428dd78b33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.36539164
+      value: -4.34
       objectReference: {fileID: 0}
     - target: {fileID: 7729186268947163834, guid: 0ebe23983242eca4c90c37428dd78b33, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3805,7 +3805,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286507658}
   m_Enabled: 1
-  m_CellSize: {x: 0.16, y: 0.16, z: 0}
+  m_CellSize: {x: 1, y: 1, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -3850,7 +3850,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550643888}
   m_Enabled: 1
-  m_CellSize: {x: 0.16, y: 0.16, z: 0}
+  m_CellSize: {x: 1, y: 1, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
