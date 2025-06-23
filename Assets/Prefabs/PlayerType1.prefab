@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8136393782831192660}
   - component: {fileID: 4853538567987666342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2117603079
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -8084874238274840218, guid: f74cd5cd1585cea42a6544b14e4df46d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7729186268947163834}
   - component: {fileID: -3260859588787581984}
+  - component: {fileID: -7558327515128055777}
   m_Layer: 0
   m_Name: PlayerType1
   m_TagString: Untagged
@@ -147,6 +148,18 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-7558327515128055777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6035701904067242697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d8a6f6fcffb124b9739dc8cdc1b3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
