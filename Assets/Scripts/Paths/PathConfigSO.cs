@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PathConfigSO", menuName = "Path Config")]
-public class SOPath0 : ScriptableObject
+public class PathConfigSO : ScriptableObject
 {
     public Transform pathPrefab;
     public float moveSpeed = 5f;
