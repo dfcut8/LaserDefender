@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
-    public PathConfigSO pathConfig;
+    public WaveConfigSO waveConfig;
     List<Transform> waypoints;
     int waypointIndex = 0;
 
     void Start()
     {
-        waypoints = pathConfig.GetWaypoints();
+        waypoints = waveConfig.GetWaypoints();
         transform.position = waypoints[waypointIndex].position;
     }
 
@@ -24,7 +24,7 @@ public class PathFinder : MonoBehaviour
         if (waypointIndex < waypoints.Count)
         {
             Transform targetWaypoint = waypoints[waypointIndex];
-            transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, pathConfig.moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, targetWaypoint.position, waveConfig.moveSpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
             {
                 waypointIndex++;

@@ -2,8 +2,8 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PathConfigSO", menuName = "Path Config")]
-public class PathConfigSO : ScriptableObject
+[CreateAssetMenu(fileName = "WaveConfigSO", menuName = "Wave Config")]
+public class WaveConfigSO : ScriptableObject
 {
     public Transform pathPrefab;
     public float moveSpeed = 5f;
