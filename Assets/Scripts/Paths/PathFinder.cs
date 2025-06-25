@@ -19,7 +19,7 @@ public class PathFinder : MonoBehaviour
 
     void Start()
     {
-        var wave = enemySpawner.GetCurrentWave();
+        var wave = enemySpawner.currentWave;
         waypoints = wave.GetWaypoints();
         transform.position = waypoints[waypointIndex].position;
     }
@@ -37,7 +37,7 @@ public class PathFinder : MonoBehaviour
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 targetWaypoint.position,
-                enemySpawner.GetCurrentWave().moveSpeed * Time.deltaTime);
+                enemySpawner.currentWave.moveSpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, targetWaypoint.position) < 0.1f)
             {
                 waypointIndex++;
