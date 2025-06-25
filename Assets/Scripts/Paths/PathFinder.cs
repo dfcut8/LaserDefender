@@ -19,7 +19,8 @@ public class PathFinder : MonoBehaviour
 
     void Start()
     {
-        waypoints = enemySpawner.GetCurrentWave().GetWaypoints();
+        var wave = enemySpawner.GetCurrentWave();
+        waypoints = wave.GetWaypoints();
         transform.position = waypoints[waypointIndex].position;
     }
 

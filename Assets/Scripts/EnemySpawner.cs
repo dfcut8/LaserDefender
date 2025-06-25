@@ -1,17 +1,29 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public WaveConfigSO currentWave;
+    public List<WaveConfigSO> waves;
+    int currentWaveIndex = 0;
 
     public WaveConfigSO GetCurrentWave()
     {
-        return currentWave;
+        return waves[currentWaveIndex];
     }
     void Start()
     {
-        StartCoroutine(SpawnEnemies());
+        for (int i = 0; i < waves.Count; i++)
+        {
+            WaveConfigSO wave = waves[i];
+            if (wave  == null)
+            {
+                Debug.LogError($"WaveConfigSO at index {i} is null.");
+                break;
+            }
+            StartCoroutine(SpawnEnemies(wave));
+            currentWaveIndex = i;
+        }
     }
 
     void Update()
@@ -19,8 +31,9 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
-    IEnumerator SpawnEnemies()
+    IEnumerator SpawnEnemies(WaveConfigSO currentWave)
     {
+        Debug.Log($"Spawning enemies for wave: {currentWave.name}");
         if (currentWave == null)
         {
             Debug.LogError("Current wave is not set.");

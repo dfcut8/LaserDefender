@@ -148,7 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e65609b9a454b547a1359199dced91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWave: {fileID: 11400000, guid: f2e33a45f1b9ca7429cb4e447d2cddaa, type: 2}
+  waves:
+  - {fileID: 11400000, guid: f2e33a45f1b9ca7429cb4e447d2cddaa, type: 2}
+  - {fileID: 11400000, guid: 27adadc7ab6433f49b97fc56d73d6c9f, type: 2}
 --- !u!4 &230398632
 Transform:
   m_ObjectHideFlags: 0
