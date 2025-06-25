@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -10,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     }
     void Start()
     {
-        SpawnEnemies();
+        StartCoroutine(SpawnEnemies());
     }
 
     void Update()
@@ -18,12 +19,12 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
-    void SpawnEnemies()
+    IEnumerator SpawnEnemies()
     {
         if (currentWave == null)
         {
             Debug.LogError("Current wave is not set.");
-            return;
+            yield return null;
         }
         for (int i = 0; i < currentWave.GetEnemyCount(); i++)
         {
@@ -37,6 +38,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 Debug.LogError($"Enemy prefab at index {i} is null.");
             }
+            yield return new WaitForSeconds(currentWave.GetSpawnTime());
         }
     }
 }
