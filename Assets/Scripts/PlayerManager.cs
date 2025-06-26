@@ -31,10 +31,10 @@ public class PlayerManager : MonoBehaviour
     private void Move()
     {
         Vector3 delta = moveInput * Time.deltaTime * speed;
-        Vector2 newPosition = new ();
+        Vector2 newPosition = new();
         newPosition.x = Mathf.Clamp(
             transform.position.x + delta.x,
-            minBounds.x +paddingLeft,
+            minBounds.x + paddingLeft,
             maxBounds.x - paddingRight
         );
         newPosition.y = Mathf.Clamp(

@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     IEnumerator SpawnEnemies(WaveConfigSO wave)
