@@ -29,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemies(WaveConfigSO wave)
     {
+        yield return new WaitForSeconds(wave.delayBeforeStart);
         for (int i = 0; i < wave.GetEnemyCount(); i++)
         {
             GameObject enemyPrefab = wave.GetEnemyPrefab(i);
