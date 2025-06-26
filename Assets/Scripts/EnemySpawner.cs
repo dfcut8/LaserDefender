@@ -8,12 +8,12 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        foreach (WaveConfigSO wave in waves)
+        foreach (WaveConfigSO w in waves)
         {
-            if (wave != null)
+            if (w != null)
             {
-                Debug.Log($"Wave loaded: {wave.name}");
-                StartCoroutine(SpawnEnemies(wave));
+                Debug.Log($"Wave loaded: {w.name}");
+                StartCoroutine(SpawnEnemies(w));
             }
             else
             {
@@ -27,43 +27,23 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
-    IEnumerator SpawnEnemies(WaveConfigSO currentWave)
+    IEnumerator SpawnEnemies(WaveConfigSO wave)
     {
-        //foreach (WaveConfigSO wave in waves)
-        //{
-        //    currentWave = wave;
-        //    Debug.Log($"Spawning enemies for wave: {currentWave.name}");
-        //    for (int i = 0; i < currentWave.GetEnemyCount(); i++)
-        //    {
-        //        GameObject enemyPrefab = currentWave.GetEnemyPrefab(i);
-        //        if (enemyPrefab != null)
-        //        {
-        //            Transform spawnPoint = currentWave.GetStartingWaypoint();
-        //            Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity, transform);
-        //        }
-        //        else
-        //        {
-        //            Debug.LogError($"Enemy prefab at index {i} is null.");
-        //        }
-        //        yield return new WaitForSeconds(currentWave.GetSpawnTime());
-        //    }
-        //    yield return new WaitForSeconds(0f);
-        //}
-        for (int i = 0; i < currentWave.GetEnemyCount(); i++)
+        for (int i = 0; i < wave.GetEnemyCount(); i++)
         {
-            GameObject enemyPrefab = currentWave.GetEnemyPrefab(i);
+            GameObject enemyPrefab = wave.GetEnemyPrefab(i);
             var pathFinder = enemyPrefab.GetComponent<PathFinder>();
-            pathFinder.wave = currentWave;
+            pathFinder.wave = wave;
             if (enemyPrefab != null)
             {
-                Transform spawnPoint = currentWave.GetStartingWaypoint();
+                Transform spawnPoint = wave.GetStartingWaypoint();
                 Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity, transform);
             }
             else
             {
                 Debug.LogError($"Enemy prefab at index {i} is null.");
             }
-            yield return new WaitForSeconds(currentWave.GetSpawnTime());
+            yield return new WaitForSeconds(wave.GetSpawnTime());
         }
     }
 }
