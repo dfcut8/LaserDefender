@@ -30,21 +30,25 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnEnemies(WaveConfigSO wave)
     {
         yield return new WaitForSeconds(wave.delayBeforeStart);
-        for (int i = 0; i < wave.GetEnemyCount(); i++)
+        do
         {
-            GameObject enemyPrefab = wave.GetEnemyPrefab(i);
-            var pathFinder = enemyPrefab.GetComponent<PathFinder>();
-            pathFinder.wave = wave;
-            if (enemyPrefab != null)
+            for (int i = 0; i < wave.GetEnemyCount(); i++)
             {
-                Transform spawnPoint = wave.GetStartingWaypoint();
-                Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity, transform);
+                GameObject enemyPrefab = wave.GetEnemyPrefab(i);
+                var pathFinder = enemyPrefab.GetComponent<PathFinder>();
+                pathFinder.wave = wave;
+                if (enemyPrefab != null)
+                {
+                    Transform spawnPoint = wave.GetStartingWaypoint();
+                    Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity, transform);
+                }
+                else
+                {
+                    Debug.LogError($"Enemy prefab at index {i} is null.");
+                }
+                yield return new WaitForSeconds(wave.GetSpawnTime());
             }
-            else
-            {
-                Debug.LogError($"Enemy prefab at index {i} is null.");
-            }
-            yield return new WaitForSeconds(wave.GetSpawnTime());
-        }
+            yield return new WaitForSeconds(wave.delayAfterEnd);
+        } while (wave.isLooping);
     }
 }

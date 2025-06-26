@@ -8,6 +8,8 @@ public class WaveConfigSO : ScriptableObject
     public List<GameObject> enemyPrefabs;
     public Transform pathPrefab;
     public float delayBeforeStart = 0f;
+    public bool isLooping = false;
+    public float delayAfterEnd = 5f;
     public float moveSpeed = 5f;
     public float timeBetweenSpawns = 1f;
     public float spawnTimeVariance = 0.2f;
