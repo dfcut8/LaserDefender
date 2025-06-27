@@ -103,5 +103,9 @@ public class PlayerManager : MonoBehaviour
             Debug.Log("Fire button pressed.");
             shooter.IsShooting = true;
         }
+        else
+        {
+            shooter.IsShooting = false;
+        }
     }
 }
