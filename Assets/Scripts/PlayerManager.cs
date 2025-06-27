@@ -12,12 +12,28 @@ public class PlayerManager : MonoBehaviour
     Vector2 moveInput;
     Vector2 minBounds;
     Vector2 maxBounds;
-    void Start()
+
+    private Shooter shooter;
+
+    public void Awake()
+    {
+        shooter = GetComponent<Shooter>();
+        if (shooter == null)
+        {
+            Debug.LogError("Shooter component not found on PlayerManager.");
+        }
+        else
+        {
+            Debug.Log("Shooter component found: " + shooter.name);
+        }
+    }
+
+    public void Start()
     {
         InitBounds();
         Debug.Log("PlayerManager started with speed: " + speed);
     }
-    void Update()
+    public void Update()
     {
         Move();
     }
@@ -77,6 +93,15 @@ public class PlayerManager : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        Debug.Log("Move Input: " + moveInput);
+    }
+
+    public void OnAttack(InputValue value)
+    {
+        //Debug.Log("Fire button pressed with value: " + value.isPressed);
+        if (value.isPressed)
+        {
+            Debug.Log("Fire button pressed.");
+            shooter.IsShooting = true;
+        }
     }
 }
