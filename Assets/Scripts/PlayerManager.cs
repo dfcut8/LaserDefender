@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
+    public int HP = 100;
     public float speed = 1f;
     public float paddingLeft = 0.1f;
     public float paddingRight = 0.1f;
@@ -43,6 +44,34 @@ public class PlayerManager : MonoBehaviour
             maxBounds.y - paddingTop
         );
         transform.position = newPosition;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent<DamageDealer>(out var damageDealer))
+        {
+            takeDamage(damageDealer.Damage);
+            Debug.Log("Player collided with DamageDealer, took " + damageDealer.Damage + " damage.");
+            Destroy(collision.gameObject);
+        }
+        else
+        {
+            Debug.Log("Player collided with: " + collision.name);
+        }
+    }
+
+    void takeDamage(int damage)
+    {
+        HP -= damage;
+        if (HP <= 0)
+        {
+            Debug.Log("Player has died.");
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Player HP: " + HP);
+        }
     }
 
     void OnMove(InputValue value)

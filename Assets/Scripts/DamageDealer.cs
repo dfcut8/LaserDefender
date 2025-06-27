@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    public int damage = 10;
+    public int Damage = 10;
     void Start()
     {
 
