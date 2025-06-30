@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8496230301392413466}
   - component: {fileID: 1892473821955989794}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,8 @@ GameObject:
   - component: {fileID: 3762360035512778516}
   - component: {fileID: 8676177964235779509}
   - component: {fileID: 3387389142365898225}
-  m_Layer: 0
+  - component: {fileID: 5641935858633910044}
+  m_Layer: 9
   m_Name: EnemyType0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788a183409a2aae4c87b03d2da73a549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: 11400000, guid: f2e33a45f1b9ca7429cb4e447d2cddaa, type: 2}
+  wave: {fileID: 11400000, guid: 27adadc7ab6433f49b97fc56d73d6c9f, type: 2}
 --- !u!114 &-6091420920828241095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,8 +169,8 @@ MonoBehaviour:
   ShootingDelay: 2
   ShootingSpread: 1
   MinShootingDelay: 0.1
-  IsShooting: 0
   IsEnemy: 1
+  IsShooting: 0
 --- !u!50 &8676177964235779509
 Rigidbody2D:
   serializedVersion: 5
@@ -234,3 +235,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0063903285, y: -0.046545155}
   m_Size: {x: 1.1989752, y: 0.5893318}
   m_Direction: 1
+--- !u!114 &5641935858633910044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098112556966705679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335a9ec9d623d64409f18d90bd39e5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 10
