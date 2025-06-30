@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
                 if (enemyPrefab != null)
                 {
                     Transform spawnPoint = wave.GetStartingWaypoint();
-                    Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity, transform);
+                    Instantiate(enemyPrefab, spawnPoint.position, Quaternion.Euler(0, 0, 180), transform);
                 }
                 else
                 {

@@ -42,7 +42,6 @@ public class Shooter : MonoBehaviour
             var rb = p.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                //rb.AddForce(transform.up * ProjectileSpeed, ForceMode2D.Impulse);
                 rb.linearVelocity = transform.up * ProjectileSpeed;
             }
             yield return new WaitForSeconds(ShootingDelay);
