@@ -166,6 +166,8 @@ MonoBehaviour:
   ProjectileSpeed: 4
   ProjectileLifetime: 10
   ShootingDelay: 2
+  ShootingSpread: 1
+  MinShootingDelay: 0.1
   IsShooting: 0
   IsEnemy: 1
 --- !u!50 &8676177964235779509

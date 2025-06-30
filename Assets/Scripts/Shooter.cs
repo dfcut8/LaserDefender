@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class Shooter : MonoBehaviour
     public float ProjectileSpeed = 10f;
     public float ProjectileLifetime = 1f;
     public float ShootingDelay = 0.1f;
+    public float ShootingSpread = 0f;
+    public float MinShootingDelay = 0.1f;
     public bool IsShooting = false;
     public bool IsEnemy = false;
 
@@ -44,7 +47,13 @@ public class Shooter : MonoBehaviour
             {
                 rb.linearVelocity = transform.up * ProjectileSpeed;
             }
-            yield return new WaitForSeconds(ShootingDelay);
+            yield return new WaitForSeconds(ShootingDelay + getRandomShootingSpread());
         }
+    }
+
+    private float getRandomShootingSpread()
+    {
+        var spread = Math.Max(UnityEngine.Random.Range(-ShootingSpread, ShootingSpread), MinShootingDelay);
+        return spread;
     }
 }
