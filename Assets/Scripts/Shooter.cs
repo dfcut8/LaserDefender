@@ -8,11 +8,15 @@ public class Shooter : MonoBehaviour
     public float ProjectileLifetime = 1f;
     public float ShootingDelay = 0.1f;
     public bool IsShooting = false;
+    public bool IsEnemy = false;
 
     private Coroutine shootingCoroutine;
     void Start()
     {
-
+        if (IsEnemy)
+        {
+            IsShooting = true;
+        }
     }
 
     void Update()

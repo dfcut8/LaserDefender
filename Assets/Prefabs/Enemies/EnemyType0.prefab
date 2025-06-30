@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1256339405
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -7653039100333099308, guid: f74cd5cd1585cea42a6544b14e4df46d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 8676177964235779509}
   - component: {fileID: 3387389142365898225}
   - component: {fileID: -6091420920828241095}
+  - component: {fileID: 3762360035512778516}
   m_Layer: 0
   m_Name: EnemyType0
   m_TagString: Untagged
@@ -213,3 +214,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
+--- !u!114 &3762360035512778516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098112556966705679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eac8c235fd381146884cd93fee1a0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectilePrefab: {fileID: 8743364718103420252, guid: 24b2ec58f5c45bf4e8ed943f0995e3c8, type: 3}
+  ProjectileSpeed: 2
+  ProjectileLifetime: 4
+  ShootingDelay: 2
+  IsShooting: 0
+  IsEnemy: 1
