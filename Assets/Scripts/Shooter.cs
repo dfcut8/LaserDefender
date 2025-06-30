@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    [Header("Projectile")]
     public GameObject ProjectilePrefab;
     public float ProjectileSpeed = 10f;
     public float ProjectileLifetime = 1f;
+
+    [Header("Shooting")]
     public float ShootingDelay = 0.1f;
     public float ShootingSpread = 0f;
     public float MinShootingDelay = 0.1f;
-    public bool IsShooting = false;
+
+    [Header("Enemy")]
     public bool IsEnemy = false;
+
+    [HideInInspector] public bool IsShooting = false;
 
     private Coroutine shootingCoroutine;
     void Start()
@@ -53,6 +59,10 @@ public class Shooter : MonoBehaviour
 
     private float getRandomShootingSpread()
     {
+        if (ShootingSpread <= 0f)
+        {
+            return 0f;
+        }
         var spread = Math.Max(UnityEngine.Random.Range(-ShootingSpread, ShootingSpread), MinShootingDelay);
         return spread;
     }
