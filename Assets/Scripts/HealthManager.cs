@@ -3,6 +3,7 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     public int HP = 100;
+    public ParticleSystem HitFx;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class HealthManager : MonoBehaviour
         if (collision.TryGetComponent<DamageDealer>(out var damageDealer))
         {
             takeDamage(damageDealer.Damage);
+            playHitFx();
             Debug.Log($"{gameObject.name} collided with {collision.gameObject.name}, took {damageDealer.Damage} damage.");
             Destroy(collision.gameObject);
         }
@@ -39,6 +41,20 @@ public class HealthManager : MonoBehaviour
         else
         {
             Debug.Log("Player HP: " + HP);
+        }
+    }
+
+    private void playHitFx()
+    {
+        if (HitFx != null)
+        {
+            //HitFx.Play();
+            ParticleSystem hitFxInstance = Instantiate(HitFx, transform.position, Quaternion.identity);
+            Destroy(hitFxInstance.gameObject, hitFxInstance.main.duration + hitFxInstance.main.startLifetime.constantMax);
+        }
+        else
+        {
+            Debug.LogWarning("HitFx ParticleSystem is not assigned.");
         }
     }
 }
