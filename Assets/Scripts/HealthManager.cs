@@ -50,7 +50,7 @@ public class HealthManager : MonoBehaviour
         {
 
             ParticleSystem hitFxInstance = Instantiate(HitFx, transform.position, Quaternion.identity);
-            HitFx.Play();
+            //HitFx.Play();
             Destroy(hitFxInstance.gameObject, hitFxInstance.main.duration + hitFxInstance.main.startLifetime.constantMax);
         }
         else
