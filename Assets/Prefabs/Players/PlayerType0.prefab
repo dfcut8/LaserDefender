@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
-  HitFx: {fileID: 2439727181631355122, guid: fddf8a5f1b83d1844821464ce93950b7, type: 3}
+  HitFx: {fileID: 2304640387283296911, guid: d3a820d0c503e0b4a8801ba1b5714588, type: 3}
 --- !u!114 &-3260859588787581984
 MonoBehaviour:
   m_ObjectHideFlags: 0
