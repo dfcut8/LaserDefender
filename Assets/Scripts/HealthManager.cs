@@ -4,6 +4,17 @@ public class HealthManager : MonoBehaviour
 {
     public int HP = 100;
     public ParticleSystem HitFx;
+    public bool ShakeCameraOnHit = true;
+    private CameraShake cameraShake;
+
+    void Awake()
+    {
+        cameraShake = Camera.main.GetComponent<CameraShake>();
+        if (cameraShake == null && ShakeCameraOnHit)
+        {
+            Debug.LogError("CameraShake component not found on main camera. Camera shake will not occur on hit.");
+        }
+    }
 
     void Start()
     {
@@ -21,12 +32,21 @@ public class HealthManager : MonoBehaviour
         {
             takeDamage(damageDealer.Damage);
             playHitFx();
+            shakeCamera();
             Debug.Log($"{gameObject.name} collided with {collision.gameObject.name}, took {damageDealer.Damage} damage.");
             Destroy(collision.gameObject);
         }
         else
         {
             Debug.Log("Player collided with: " + collision.name);
+        }
+    }
+
+    private void shakeCamera()
+    {
+        if (ShakeCameraOnHit && cameraShake != null)
+        {
+            cameraShake.ShakeCamera();
         }
     }
 
