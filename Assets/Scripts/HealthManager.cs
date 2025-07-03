@@ -4,7 +4,7 @@ public class HealthManager : MonoBehaviour
 {
     public int HP = 100;
     public ParticleSystem HitFx;
-    public bool ShakeCameraOnHit = true;
+    public bool ShakeCameraOnHit = false;
     private CameraShake cameraShake;
 
     void Awake()

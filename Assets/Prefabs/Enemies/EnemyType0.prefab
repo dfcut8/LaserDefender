@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788a183409a2aae4c87b03d2da73a549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: 11400000, guid: 27adadc7ab6433f49b97fc56d73d6c9f, type: 2}
+  wave: {fileID: 11400000, guid: f2e33a45f1b9ca7429cb4e447d2cddaa, type: 2}
 --- !u!114 &-6091420920828241095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   HitFx: {fileID: 2304640387283296911, guid: d3a820d0c503e0b4a8801ba1b5714588, type: 3}
+  ShakeCameraOnHit: 0
 --- !u!114 &3762360035512778516
 MonoBehaviour:
   m_ObjectHideFlags: 0
