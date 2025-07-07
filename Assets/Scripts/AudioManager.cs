@@ -10,6 +10,22 @@ public class AudioManager : MonoBehaviour
     public AudioClip shootingClip;
     [Range(0.0f, 1.0f)] public float shootingVolume = 0.5f;
 
+    private void Awake()
+    {
+        if (backgroundMusicClip != null)
+        {
+            AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.clip = backgroundMusicClip;
+            audioSource.loop = true;
+            audioSource.volume = backgroundMusicVolume;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Background music clip is not assigned in AudioManager.");
+        }
+    }
+
     void Start()
     {
 
@@ -24,6 +40,7 @@ public class AudioManager : MonoBehaviour
     {
         if (shootingClip != null)
         {
+            Debug.Log($"{Time.fixedTimeAsDouble}: Playing Sound");
             AudioSource.PlayClipAtPoint(shootingClip, Camera.main.transform.position, shootingVolume);
         }
         else

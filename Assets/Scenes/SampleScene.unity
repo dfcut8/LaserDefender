@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundMusicClip: {fileID: 8300000, guid: 0a61995d1246cba44b9620705c2d37b0, type: 3}
-  backgroundMusicVolume: 0.5
+  backgroundMusicVolume: 0.25
   shootingClip: {fileID: 8300000, guid: d29fad351e1e94e40b49bcb5dc364d28, type: 3}
   shootingVolume: 0.5
 --- !u!1 &132745379

@@ -35,6 +35,7 @@ public class Shooter : MonoBehaviour
     {
         if (IsShooting && shootingCoroutine == null)
         {
+            OnShoot?.Invoke();
             shootingCoroutine = StartCoroutine(shootContinuesly());
         }
         else if (!IsShooting && shootingCoroutine != null)
@@ -49,7 +50,7 @@ public class Shooter : MonoBehaviour
     {
         while (true)
         {
-            OnShoot?.Invoke();
+            Debug.Log($"{Time.fixedTimeAsDouble}: Shooting projectile");
             var p = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
             Destroy(p, ProjectileLifetime);
             var rb = p.GetComponent<Rigidbody2D>();
