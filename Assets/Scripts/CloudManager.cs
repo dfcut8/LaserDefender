@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CloudManager : MonoBehaviour
 {
+    public float Speed = 0.1f;
     private Renderer r;
 
     public void Awake()
@@ -15,6 +16,6 @@ public class CloudManager : MonoBehaviour
 
     void Update()
     {
-        r.material.mainTextureOffset = new Vector2(0, Time.time * 0.1f);
+        r.material.mainTextureOffset = new Vector2(0, Time.time * Speed);
     }
 }
