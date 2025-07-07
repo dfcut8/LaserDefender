@@ -5,11 +5,11 @@ public class HealthManager : MonoBehaviour
     public int HP = 100;
     public ParticleSystem HitFx;
     public bool ShakeCameraOnHit = false;
-    private CameraShake cameraShake;
+    private CameraManager cameraShake;
 
     void Awake()
     {
-        cameraShake = Camera.main.GetComponent<CameraShake>();
+        cameraShake = Camera.main.GetComponent<CameraManager>();
         if (cameraShake == null && ShakeCameraOnHit)
         {
             Debug.LogError("CameraShake component not found on main camera. Camera shake will not occur on hit.");

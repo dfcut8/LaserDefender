@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class CameraShake : MonoBehaviour
+public class CameraManager : MonoBehaviour
 {
     public float shakeDuration = 0.5f;
     public float shakeMagnitude = 0.5f;
+    public float moveSpeed = 0.5f;
 
     private Vector3 originalPosition;
 
@@ -15,7 +16,7 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-
+        transform.position += Vector3.up * moveSpeed * Time.deltaTime;
     }
 
     public void ShakeCamera()
