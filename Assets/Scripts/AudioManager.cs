@@ -19,4 +19,16 @@ public class AudioManager : MonoBehaviour
     {
 
     }
+
+    public void PlayShootingClip()
+    {
+        if (shootingClip != null)
+        {
+            AudioSource.PlayClipAtPoint(shootingClip, Camera.main.transform.position, shootingVolume);
+        }
+        else
+        {
+            Debug.LogWarning("Shooting clip is not assigned in AudioManager.");
+        }
+    }
 }

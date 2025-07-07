@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Shooter : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Shooter : MonoBehaviour
     public bool IsEnemy = false;
 
     [HideInInspector] public bool IsShooting = false;
+
+    public UnityEvent OnShoot;
 
     private Coroutine shootingCoroutine;
     void Start()
@@ -46,6 +49,7 @@ public class Shooter : MonoBehaviour
     {
         while (true)
         {
+            OnShoot?.Invoke();
             var p = Instantiate(ProjectilePrefab, transform.position, Quaternion.identity);
             Destroy(p, ProjectileLifetime);
             var rb = p.GetComponent<Rigidbody2D>();
