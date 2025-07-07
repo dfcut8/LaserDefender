@@ -16,7 +16,7 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
-        transform.position += Vector3.up * moveSpeed * Time.deltaTime;
+        //transform.position += Vector3.up * moveSpeed * Time.deltaTime;
     }
 
     public void ShakeCamera()

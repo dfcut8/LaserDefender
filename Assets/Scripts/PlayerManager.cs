@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerManager : MonoBehaviour
 {
     public float speed = 1f;
+    public float constantSpeed = 1f;
     public float paddingLeft = 0.1f;
     public float paddingRight = 0.1f;
     public float paddingTop = 0.1f;
@@ -13,9 +14,11 @@ public class PlayerManager : MonoBehaviour
     Vector2 maxBounds;
 
     private Shooter shooter;
+    private Camera cam;
 
     public void Awake()
     {
+        cam = Camera.main;
         shooter = GetComponent<Shooter>();
         if (shooter == null)
         {
@@ -29,7 +32,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Start()
     {
-        InitBounds();
+        //InitBounds();
         Debug.Log("PlayerManager started with speed: " + speed);
     }
     public void Update()
@@ -39,13 +42,20 @@ public class PlayerManager : MonoBehaviour
 
     void InitBounds()
     {
-        Camera mainCamera = Camera.main;
-        minBounds = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
-        maxBounds = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
+
+        minBounds = cam.ViewportToWorldPoint(new Vector2(0, 0));
+        maxBounds = cam.ViewportToWorldPoint(new Vector2(1, 1));
     }
 
     private void Move()
     {
+        InitBounds();
+        //transform.position = new Vector3(
+        //    transform.position.x + moveInput.x * speed * Time.deltaTime,
+        //    transform.position.y + moveInput.y * speed * Time.deltaTime,
+        //    transform.position.z
+        //);
+
         Vector3 delta = moveInput * Time.deltaTime * speed;
         Vector2 newPosition = new();
         newPosition.x = Mathf.Clamp(
@@ -58,14 +68,13 @@ public class PlayerManager : MonoBehaviour
             minBounds.y + paddingBottom,
             maxBounds.y - paddingTop
         );
-        transform.position = newPosition;
+        transform.position = newPosition + new Vector2(0, Vector2.up.y * constantSpeed * Time.deltaTime);
     }
-
-
 
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        Debug.Log("Move input received: " + moveInput);
     }
 
     public void OnAttack(InputValue value)
