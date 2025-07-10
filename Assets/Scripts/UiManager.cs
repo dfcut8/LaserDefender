@@ -9,13 +9,12 @@ public class UiManager : MonoBehaviour
 
     void Awake()
     {
-        scoreManager.OnScoreChanged.AddListener(UpdateScoreText);
+        //scoreManager.OnScoreChanged.AddListener(UpdateScoreText);
         text = GetComponentInChildren<TextMeshProUGUI>();
-        UpdateScoreText();
+        //UpdateScoreText();
     }
-    public void UpdateScoreText()
+    public void Update()
     {
-        Debug.Log("Updating score text.");
         text.text = scoreManager.CurrentScore.ToString();
     }
 }
