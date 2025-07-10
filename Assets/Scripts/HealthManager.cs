@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class HealthManager : MonoBehaviour
     public ParticleSystem HitFx;
     public bool ShakeCameraOnHit = false;
     private CameraManager cameraShake;
+
+    public UnityEvent OnHit;
 
     void Awake()
     {
@@ -30,6 +33,7 @@ public class HealthManager : MonoBehaviour
     {
         if (collision.TryGetComponent<DamageDealer>(out var damageDealer))
         {
+            OnHit?.Invoke();
             takeDamage(damageDealer.Damage);
             playHitFx();
             shakeCamera();

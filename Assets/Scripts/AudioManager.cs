@@ -10,6 +10,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip shootingClip;
     [Range(0.0f, 1.0f)] public float shootingVolume = 0.5f;
 
+    [Header("Explosions")]
+    public AudioClip EnemyExplosion1;
+    [Range(0.0f, 1.0f)] public float EnemyExplosion1Volume = 0.5f;
+
     private void Awake()
     {
         if (backgroundMusicClip != null)
@@ -40,12 +44,23 @@ public class AudioManager : MonoBehaviour
     {
         if (shootingClip != null)
         {
-            Debug.Log($"{Time.fixedTimeAsDouble}: Playing Sound");
             AudioSource.PlayClipAtPoint(shootingClip, Camera.main.transform.position, shootingVolume);
         }
         else
         {
             Debug.LogWarning("Shooting clip is not assigned in AudioManager.");
+        }
+    }
+
+    public void PlayEnemyExplosion1()
+    {
+        if (EnemyExplosion1 != null)
+        {
+            AudioSource.PlayClipAtPoint(EnemyExplosion1, Camera.main.transform.position, EnemyExplosion1Volume);
+        }
+        else
+        {
+            Debug.LogWarning("Enemy explosion clip is not assigned in AudioManager.");
         }
     }
 }

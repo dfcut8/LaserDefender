@@ -166,6 +166,21 @@ MonoBehaviour:
   HP: 10
   HitFx: {fileID: 2304640387283296911, guid: d3a820d0c503e0b4a8801ba1b5714588, type: 3}
   ShakeCameraOnHit: 0
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5734755835537156131, guid: 7283938c3d203574ab5f6a9d4ed0bbf1, type: 3}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayEnemyExplosion1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3762360035512778516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +201,9 @@ MonoBehaviour:
   MinShootingDelay: 0.1
   IsEnemy: 1
   IsShooting: 0
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &8676177964235779509
 Rigidbody2D:
   serializedVersion: 5
