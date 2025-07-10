@@ -166,6 +166,8 @@ MonoBehaviour:
   HP: 10
   HitFx: {fileID: 2304640387283296911, guid: d3a820d0c503e0b4a8801ba1b5714588, type: 3}
   ShakeCameraOnHit: 0
+  ScoreOnHit: 1
+  ScoreOnHitAmount: 100
   OnHit:
     m_PersistentCalls:
       m_Calls:
@@ -177,6 +179,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -6658410370265728378, guid: bd1e9e8e809ded54e82922b9da508e8c, type: 3}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: AddScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

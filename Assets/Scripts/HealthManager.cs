@@ -6,9 +6,13 @@ public class HealthManager : MonoBehaviour
     public int HP = 100;
     public ParticleSystem HitFx;
     public bool ShakeCameraOnHit = false;
-    private CameraManager cameraShake;
+
+    [Header("Scoring Settings")]
+    public bool ScoreOnHit = false;
 
     public UnityEvent OnHit;
+
+    private CameraManager cameraShake;
 
     void Awake()
     {
