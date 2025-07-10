@@ -3,7 +3,8 @@ using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
-    public int HP = 100;
+    public int HPMax = 100;
+    public int HPCurrent = 100;
     public ParticleSystem HitFx;
     public bool ShakeCameraOnHit = false;
 
@@ -60,15 +61,15 @@ public class HealthManager : MonoBehaviour
 
     void takeDamage(int damage)
     {
-        HP -= damage;
-        if (HP <= 0)
+        HPCurrent -= damage;
+        if (HPCurrent <= 0)
         {
             Debug.Log($"{gameObject.name} has died.");
             Destroy(gameObject);
         }
         else
         {
-            Debug.Log("Player HP: " + HP);
+            Debug.Log("Player HP: " + HPCurrent);
         }
     }
 

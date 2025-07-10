@@ -2805,6 +2805,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &375696804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6035701904067242697, guid: 0ebe23983242eca4c90c37428dd78b33, type: 3}
+  m_PrefabInstance: {fileID: 643283024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &423650470
 GameObject:
   m_ObjectHideFlags: 0
@@ -5219,6 +5224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreManager: {fileID: -6658410370265728378, guid: bd1e9e8e809ded54e82922b9da508e8c, type: 3}
+  player: {fileID: 375696804}
 --- !u!1 &1249124540
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,8 +5686,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 2.5, y: 0}
+  m_SizeDelta: {x: -5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1991455403
 GameObject:
@@ -5769,7 +5775,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -163,11 +163,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 335a9ec9d623d64409f18d90bd39e5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HPMax: 20
+  HPCurrent: 20
   HitFx: {fileID: 2304640387283296911, guid: d3a820d0c503e0b4a8801ba1b5714588, type: 3}
   ShakeCameraOnHit: 0
   ScoreOnHit: 1
-  ScoreOnHitAmount: 100
   OnHit:
     m_PersistentCalls:
       m_Calls:

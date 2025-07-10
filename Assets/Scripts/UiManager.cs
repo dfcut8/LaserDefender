@@ -1,20 +1,28 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
     public ScoreManager scoreManager;
-    private int currentScore;
+    public GameObject player;
     private TextMeshProUGUI text;
+    private Slider slider;
 
     void Awake()
     {
-        //scoreManager.OnScoreChanged.AddListener(UpdateScoreText);
+        slider = GetComponentInChildren<Slider>();
         text = GetComponentInChildren<TextMeshProUGUI>();
-        //UpdateScoreText();
     }
+
+    private void Start()
+    {
+        slider.maxValue = player.GetComponent<HealthManager>().HPMax;
+    }
+
     public void Update()
     {
+        slider.value = player.GetComponent<HealthManager>().HPCurrent;
         text.text = scoreManager.CurrentScore.ToString();
     }
 }
