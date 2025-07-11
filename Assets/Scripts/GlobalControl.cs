@@ -45,4 +45,10 @@ public class GlobalControl : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
+
+    public void GameOver()
+    {
+        Debug.Log("Game Over Triggered");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+    }
 }

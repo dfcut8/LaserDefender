@@ -12,6 +12,7 @@ public class HealthManager : MonoBehaviour
     public bool ScoreOnHit = false;
 
     public UnityEvent OnHit;
+    public UnityEvent OnDie;
 
     private CameraManager cameraShake;
 
@@ -72,6 +73,7 @@ public class HealthManager : MonoBehaviour
         {
             Debug.Log($"{gameObject.name} has died.");
             Destroy(gameObject);
+            OnDie?.Invoke();
         }
         else
         {

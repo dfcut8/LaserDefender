@@ -22,6 +22,11 @@ public class UiManager : MonoBehaviour
 
     public void Update()
     {
+        if (scoreManager == null || player == null || text == null || slider == null)
+        {
+            Debug.LogError("UiManager is missing references to ScoreManager, Player, Text or Slider.");
+            return;
+        }
         slider.value = player.GetComponent<HealthManager>().HPCurrent;
         text.text = scoreManager.CurrentScore.ToString();
     }
