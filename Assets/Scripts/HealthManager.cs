@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class HealthManager : MonoBehaviour
 {
     public int HPMax = 100;
-    public int HPCurrent = 100;
+    public int HPCurrent { get; private set; }
     public ParticleSystem HitFx;
     public bool ShakeCameraOnHit = false;
 
@@ -32,6 +32,12 @@ public class HealthManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void OnEnable()
+    {
+        HPCurrent = HPMax;
+        Debug.Log($"{gameObject.name} initialized with {HPCurrent} HP.");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -79,7 +85,6 @@ public class HealthManager : MonoBehaviour
         {
 
             ParticleSystem hitFxInstance = Instantiate(HitFx, transform.position, Quaternion.identity);
-            //HitFx.Play();
             Destroy(hitFxInstance.gameObject, hitFxInstance.main.duration + hitFxInstance.main.startLifetime.constantMax);
         }
         else

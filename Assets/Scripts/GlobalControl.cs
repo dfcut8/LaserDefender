@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GlobalControl : MonoBehaviour
 {
+    public bool AllowGameReset = true;
     private InputSystem inputActions;
     void Awake()
     {
@@ -11,7 +12,7 @@ public class GlobalControl : MonoBehaviour
     private void OnEnable()
     {
         inputActions.Enable();
-        inputActions.Player.GameReset.performed += OnGameReset;
+        inputActions.Player.GameReset.performed += ResetLevel;
     }
 
     private void OnDisable()
@@ -20,10 +21,28 @@ public class GlobalControl : MonoBehaviour
         inputActions.Player.GameReset.Disable();
     }
 
-    private void OnGameReset(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    private void ResetLevel(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         // Handle game reset logic here
         Debug.Log("Game Reset Triggered");
+        if (!AllowGameReset)
+        {
+            Debug.LogWarning("Game reset is not allowed.");
+            return;
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void StartLevel1()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }
