@@ -3,6 +3,7 @@ using UnityEngine;
 public class GlobalControl : MonoBehaviour
 {
     public bool AllowGameReset = true;
+    public int LastPlayedLevel = 1;
     private InputSystem inputActions;
     void Awake()
     {
@@ -50,5 +51,10 @@ public class GlobalControl : MonoBehaviour
     {
         Debug.Log("Game Over Triggered");
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+    }
+
+    public void RestartLevel()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(LastPlayedLevel);
     }
 }
