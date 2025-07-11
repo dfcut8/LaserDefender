@@ -42,14 +42,6 @@ public class AudioManager : MonoBehaviour
 
     private void HandleEnemySpawned(GameObject enemy)
     {
-        //if (enemy.TryGetComponent<Shooter>(out var shooter))
-        //{
-        //    shooter.OnShoot.AddListener(PlayShootingClip);
-        //}
-        //else
-        //{
-        //    Debug.LogWarning("Enemy spawned does not have a Shooter component.");
-        //}
         if (enemy.TryGetComponent<HealthManager>(out var healthManager))
         {
             healthManager.OnHit.AddListener(PlayEnemyExplosion1);
