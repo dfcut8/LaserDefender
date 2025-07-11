@@ -209,6 +209,9 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: f2e33a45f1b9ca7429cb4e447d2cddaa, type: 2}
   - {fileID: 11400000, guid: 27adadc7ab6433f49b97fc56d73d6c9f, type: 2}
+  OnEnemySpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &230398632
 Transform:
   m_ObjectHideFlags: 0
@@ -5223,7 +5226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4e8a4d0eb755e4f8ed71c6bec7d50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreManager: {fileID: -6658410370265728378, guid: bd1e9e8e809ded54e82922b9da508e8c, type: 3}
+  scoreManager: {fileID: 1929244423}
   player: {fileID: 375696804}
 --- !u!1 &1249124540
 GameObject:
@@ -5682,10 +5685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81860ae6670f62347bc24a251f547f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentScore: 0
-  OnScoreChanged:
-    m_PersistentCalls:
-      m_Calls: []
+  enemySpawner: {fileID: 230398631}
 --- !u!4 &1929244424
 Transform:
   m_ObjectHideFlags: 0

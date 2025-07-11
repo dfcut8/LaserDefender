@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
     public List<WaveConfigSO> waves;
+
+    public UnityEvent<GameObject> OnEnemySpawn;
 
     void Start()
     {
@@ -40,7 +43,8 @@ public class EnemySpawner : MonoBehaviour
                 if (enemyPrefab != null)
                 {
                     Transform spawnPoint = wave.GetStartingWaypoint();
-                    Instantiate(enemyPrefab, spawnPoint.position, Quaternion.Euler(0, 0, 180), transform);
+                    var instance = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.Euler(0, 0, 180), transform);
+                    OnEnemySpawn?.Invoke(instance);
                 }
                 else
                 {
